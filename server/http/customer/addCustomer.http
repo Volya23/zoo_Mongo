@@ -1,0 +1,11 @@
+POST  http://localhost:5500/api/customers/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Mike",
+    "lastName": "Jason",
+    "email": "Jason@oi.com",
+    "password": "fgjy56",
+    "gender": "male",
+    "birthday": "1956-09-12"
+}
