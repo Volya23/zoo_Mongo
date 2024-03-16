@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Customer = require('./Customer');
 const Product = require('./Product');
 const Order = require('./Order');
+const User = require('./User');
 const { DB } = require('../configs/db');
 
 mongoose.connect(DB)
@@ -14,5 +15,6 @@ mongoose.connect(DB)
 module.exports = {
     Customer,
     Product,
-    Order
+    Order,
+    User
 }

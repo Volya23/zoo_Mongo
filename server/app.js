@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const myRouter = require('./routes');
-const errorHandler = require('./middlewares/errorHandler');
+const rootRouter = require ('./routes');
+
+const errorHandler = require('./middlewares/errorHandler.js');
 
 const app = express();
 
@@ -9,8 +10,11 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/api', myRouter);
+//app.use(express.static('public'));
+
+app.use('/api/', rootRouter);
 
 app.use(errorHandler);
+
 
 module.exports = app;
