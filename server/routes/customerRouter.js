@@ -7,5 +7,7 @@ customerRouter
 .route('/')
 .post(CustomerController.addCustomer);
 
-
+customerRouter
+.route('/:customerId')
+.delete(CustomerController.deleteCustomer);
 module.exports = customerRouter;
