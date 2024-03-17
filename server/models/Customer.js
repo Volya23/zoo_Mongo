@@ -13,6 +13,7 @@ const customerSchema = new Schema ({
     email: {
         type: String,
         required: true,
+        unique: true,
         validate: {
             validator: (v) => /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(v)
         }
