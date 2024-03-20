@@ -1,0 +1,9 @@
+POST http://localhost:5500/api/orders HTTP/1.1
+Content-Type: application/json
+
+{
+    "customerId": "65f765d31f6aa79682934329",
+    "date": "2024-01-13",
+    "status": "update",
+    "product": ["65f5e65ba78c3720e1c367dc", "65f785c18ebfcea4dd2c31be"]
+}

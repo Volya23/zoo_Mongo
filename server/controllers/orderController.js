@@ -1,26 +1,26 @@
-const { Order } = require('../models');
+const { Order, Product, Customer} = require('../models');
 
 module.exports.createOrder = async (req, res, next) => {
     try {
         const { body, products } = req;
 
-        const order = await Order.create({ ...body, products });
+        const order = await Order.create({ ...body, products: [] });
         return res.status(201).send(order);
     } catch (error) {
         next(error);
     }
 };
 
-/*module.exports.getOrder = async (req, res, next) => {
+module.exports.getOrder = async (req, res, next) => {
     try {
         const {params: {orderId}} = req;
-        const salad = await Order.findById(orderId).populate('ingredients');
+        const order = await Order.findById(orderId).populate('products');
 
-        return res.status(200).send(salad);
+        return res.status(200).send(order);
     } catch (error) {
         next(error);
     }
-};*/
+};
 
 module.exports.updateOrder = async (req, res, next) => {
     try {
